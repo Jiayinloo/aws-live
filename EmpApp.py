@@ -26,12 +26,14 @@ def employee():
     # return render_template('AddEmp.html')
     return render_template('employee.html')
 
+
+
 @app.route("/about", methods=['POST'])
 def about():
     return render_template('www.intellipaat.com')
 
 
-@app.route("/addemp", methods=['POST'])
+@app.route("/", methods=['POST'])
 def AddEmp():
     emp_id = request.form['emp_id']
     first_name = request.form['first_name']
@@ -95,7 +97,7 @@ def AddEmp():
         cursor.close()
 
     print("all modification done...")
-    return render_template('employee.html', name=emp_name)
+    return render_template('AddEmpOutput.html', name=emp_name)
 
 
 if __name__ == '__main__':
